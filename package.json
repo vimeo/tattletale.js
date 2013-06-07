@@ -1,0 +1,31 @@
+{
+  "name": "Tattletale",
+  "description": "A utility to send console logs over XHR for server-side processing.",
+  "version": "0.1.0",
+  "author": "Vimeo, LLC",
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vimeo/tattletail.git"
+  },
+  "contributors": [
+    {
+      "name": "Kevin Sweeney"
+    }
+  ],
+  "keywords": [
+    "console",
+    "logs",
+    "logging"
+  ],
+  "dependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-jshint": "~0.6",
+    "grunt-mocha": "~0.3",
+    "mocha": "~1.10",
+    "chai": "~1.6",
+    "sinon": "~1.7",
+    "sinon-chai": "~2.4",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
