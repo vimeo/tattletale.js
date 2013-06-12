@@ -19,7 +19,6 @@
     "scripturl": true,
     "browser": true,
     "devel": true,
-    "mootools": true,
     "node": true,
     "globals": {
         "describe": true,
