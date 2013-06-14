@@ -5,12 +5,12 @@ Tattletale wraps around the browser’s `console` object, storing your logs in o
 ## Usage
 
 ```javascript
-var debug_obj = new Tattletale('/log');
+var tattletale = new Tattletale('/log');
 
-debug_obj.log('“My name is Ozymandias, king of kings:');
-debug_obj.log('Look on my works, ye Mighty, and despair!”');
+tattletale.log('“My name is Ozymandias, king of kings:');
+tattletale.log('Look on my works, ye Mighty, and despair!”');
 
-debug_obj.send();
+tattletale.send();
 ```
 
 When the `send()` method is called, an array of all log calls made since the last `send()` call will be submitted to the server as an array of request parameters name `console_logs`:
@@ -28,7 +28,7 @@ The `empty()` method will be automatically triggered to prevent duplicate entrie
 In addition to a server-side endpoint, the constructor also accepts an object of static parameters to be sent along with your request. For example, if your `POST` requests need to include a token to prevent against [XSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery):
 
 ```javascript
-var debug_obj = new Tattletale('/log', {
+var tattletale = new Tattletale('/log', {
     token: window.xsrft
 });
 ```
