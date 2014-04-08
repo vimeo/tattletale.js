@@ -1,4 +1,4 @@
-# Tattletale
+# Tattletale.JS
 
 Tattletale wraps around the browser’s `console` object, storing your logs in order to send them over XHR for long-term storage and analysis using a service like [Scribe](http://github.com/facebook/scribe).
 
