@@ -138,15 +138,15 @@
          */
         send: function(callback) {
             var self = this,
-                request = new XMLHttpRequest();
+                request = new XMLHttpRequest(),
+                data_to_send = null;
 
             self.request_data.console_logs = self.logs;
-            self.request_data = convertObjectToQueryString(self.request_data);
+            data_to_send = convertObjectToQueryString(self.request_data);
+            self.empty();
 
             request.onreadystatechange = function() {
                 if (request.readyState === 4) {
-                    self.empty();
-
                     if (typeof callback === 'function') {
                         callback();
                     }
@@ -157,7 +157,7 @@
             request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-            request.send(self.request_data);
+            request.send(data_to_send);
         }
     };
 
