@@ -21,6 +21,7 @@
     "devel": true,
     "node": true,
     "globals": {
+        "define": true,
         "describe": true,
         "beforeEach": true,
         "afterEach": true,
