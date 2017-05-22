@@ -32,3 +32,13 @@ var tattletale = new Tattletale('/log', {
     token: window.xsrft
 });
 ```
+
+A third argument is allowed for general configuration, such as disabling console logging:
+
+```javascript
+var tattletale = new Tattletale('/log', {}, {
+    consoleLoggingDisabled: true
+});
+```
+
+

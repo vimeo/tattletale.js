@@ -12,8 +12,10 @@
      * @param {string} url The XHR path used to send the console logs.
      * @param {Object} static_request_data Static data to send along with each
      *     request, such as a cross-site request forgery token.
+     * @param {Object} options Customizable params, not attached to the
+     *     request, such as disabling console logging.
      */
-    function Tattletale(url, static_request_data) {
+    function Tattletale(url, static_request_data, options) {
         var self = this;
 
         if (typeof url !== 'string') {
@@ -23,6 +25,7 @@
         self.url = url;
         self.request_data = (typeof static_request_data === 'object') ? static_request_data : {};
         self.logs = [];
+        self.options = options || {};
     }
 
 // Internal Methods __________________________________________________________
@@ -118,7 +121,7 @@
 
             logs.push(arguments_string);
 
-            if (typeof window.console !== 'undefined' && typeof window.console.log === 'function') {
+            if (!this.options.consoleLoggingDisabled && typeof window.console !== 'undefined' && typeof window.console.log === 'function') {
                 window.console.log.apply(window.console, arguments);
             }
         },
