@@ -168,11 +168,13 @@
                 }
             };
 
-            request.open('POST', self.url, true);
-            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            if (data_to_send) {
+                request.open('POST', self.url, true);
+                request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-            request.send(data_to_send);
+                request.send(data_to_send);
+            }
         }
     };
 
