@@ -4,6 +4,7 @@
   "version": "0.2.0",
   "author": "Vimeo, LLC",
   "license": "Apache-2.0",
+  "main": "tattletale.min.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:vimeo/tattletale.js.git"
