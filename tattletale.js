@@ -1,4 +1,19 @@
-;(function(window) {
+// UMD conversion based on: https://github.com/umdjs/umd/blob/master/templates/returnExports.js
+
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.Tattletale = factory();
+  }
+}(this, function () {
     'use strict';
 
 // Constructor _______________________________________________________________
@@ -153,16 +168,15 @@
                 }
             };
 
-            request.open('POST', self.url, true);
-            request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            if (data_to_send) {
+                request.open('POST', self.url, true);
+                request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-            request.send(data_to_send);
+                request.send(data_to_send);
+            }
         }
     };
 
-// Exports ___________________________________________________________________
-
-    window.Tattletale = Tattletale;
-
-})(window);
+    return Tattletale;
+}));

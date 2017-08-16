@@ -1,14 +1,21 @@
 {
   "name": "Tattletale",
-  "description": "A utility to send console logs over XHR for server-side processing.",
-  "version": "0.1.0",
+  "description": "A UMD module for sending console logs over XHR for server-side processing.",
+  "version": "0.2.0",
   "author": "Vimeo, LLC",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
+  "main": "tattletale.min.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vimeo/tattletail.git"
+    "url": "git@github.com:vimeo/tattletale.js.git"
+  },
+  "scripts": {
+    "build": "grunt"
   },
   "contributors": [
+    {
+      "name": "iconix"
+    },
     {
       "name": "Kevin Sweeney"
     }
@@ -19,13 +26,14 @@
     "logging"
   ],
   "dependencies": {
-    "grunt": "~0.4",
-    "grunt-contrib-jshint": "~0.6",
-    "grunt-mocha": "~0.3",
-    "mocha": "~1.10",
-    "chai": "~1.6",
-    "sinon": "~1.7",
-    "sinon-chai": "~2.4",
-    "grunt-contrib-uglify": "~0.2.2"
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-mocha": "^1.0.4",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0"
   }
 }

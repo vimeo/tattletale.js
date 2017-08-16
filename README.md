@@ -2,6 +2,12 @@
 
 Tattletale wraps around the browser’s `console` object, storing your logs in order to send them over XHR for long-term storage and analysis using a service like [Scribe](http://github.com/facebook/scribe).
 
+## Install with npm
+
+```
+npm install Tattletale
+```
+
 ## Usage
 
 ```javascript
@@ -31,4 +37,12 @@ In addition to a server-side endpoint, the constructor also accepts an object of
 var tattletale = new Tattletale('/log', {
     token: window.xsrft
 });
+```
+
+## Contributors
+
+### Lint, Test, Uglify
+
+```
+npm install && npm run build
 ```
